@@ -23,7 +23,6 @@ public class SolutionTest {
     @BeforeEach
     void init() {
         System.setOut(new PrintStream(outContent));
-
     }
 
     @AfterEach
@@ -31,7 +30,6 @@ public class SolutionTest {
         System.setOut(originalOut);
         System.setIn(originalIn);
     }
-
 
     @Test
     void testCase1() {
