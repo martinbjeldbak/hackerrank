@@ -47,6 +47,7 @@ public class SolutionTest {
                         "2 x 4 = 8\n" +
                         "2 x 5 = 10\n" +
                         "2 x 6 = 12\n" +
+                        "2 x 7 = 14\n" +
                         "2 x 8 = 16\n" +
                         "2 x 9 = 18\n" +
                         "2 x 10 = 20\n",
