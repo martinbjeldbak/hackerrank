@@ -1,8 +1,6 @@
-package com.martinbjeldbak;
+package com.martinbjeldbak.welcometojava;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import com.martinbjeldbak.welcometojava.Solution;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
