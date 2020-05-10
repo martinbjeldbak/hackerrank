@@ -13,16 +13,12 @@ public class Solution {
             System.out.println("Weird");
         }
         else { // even
-            if(N > 1 && N < 6) {
-                System.out.println("Not Weird");
-            }
-            else if(N > 5 && N < 21) {
+            if(N > 5 && N < 21) {
                 System.out.println("Weird");
             }
             else {
                 System.out.println("Not Weird");
             }
-
         }
     }
 }
