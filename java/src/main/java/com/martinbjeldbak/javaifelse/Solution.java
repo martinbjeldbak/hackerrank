@@ -4,17 +4,21 @@ import java.util.Scanner;
 
 public class Solution {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int N = scanner.nextInt();
+        final Scanner scanner = new Scanner(System.in);
+        final int N = scanner.nextInt();
+        final String output;
+
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
         scanner.close();
 
         if((N % 2 == 1) || (N > 5 && N < 21)) {
-            System.out.println("Weird");
+            output = "Weird";
         }
         else { // even
-            System.out.println("Not Weird");
+            output = "Not Weird";
         }
+
+        System.out.println(output);
     }
 }
 
