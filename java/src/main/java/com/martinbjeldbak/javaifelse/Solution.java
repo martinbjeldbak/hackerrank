@@ -9,16 +9,11 @@ public class Solution {
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
         scanner.close();
 
-        if(N % 2 == 1) { // odd
+        if((N % 2 == 1) || (N > 5 && N < 21)) {
             System.out.println("Weird");
         }
         else { // even
-            if(N > 5 && N < 21) {
-                System.out.println("Weird");
-            }
-            else {
-                System.out.println("Not Weird");
-            }
+            System.out.println("Not Weird");
         }
     }
 }
