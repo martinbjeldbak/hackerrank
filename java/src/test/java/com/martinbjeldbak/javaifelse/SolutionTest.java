@@ -1,6 +1,5 @@
 package com.martinbjeldbak.javaifelse;
 
-import com.martinbjeldbak.javastdinandstdouti.Solution;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,21 +16,21 @@ public class SolutionTest {
     private final PrintStream originalOut = System.out;
 
     private final InputStream originalIn = System.in;
+    private final String[] defaultInput = new String[]{};
     private ByteArrayInputStream inContent;
     private String input;
 
     @BeforeEach
-    public void setUpStreams() {
+    void init() {
         System.setOut(new PrintStream(outContent));
 
     }
 
     @AfterEach
-    public void tearDownStreams() {
+    void tearDown() {
         System.setOut(originalOut);
         System.setIn(originalIn);
     }
-
 
     @Test
     void oddInput() {
@@ -40,20 +39,68 @@ public class SolutionTest {
         inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);
 
-        Solution.main(new String[]{});
+        Solution.main(defaultInput);
 
-        assertEquals("Weird", outContent.toString());
+        assertEquals("Weird\n", outContent.toString());
     }
 
     @Test
-    void evenInput() {
+    void evenAndBetween2and5() {
+        input = "4\n";
+
+        inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);
+
+        Solution.main(defaultInput);
+
+        assertEquals("Not Weird\n", outContent.toString());
+    }
+
+    @Test
+    void evenAndBetween6and20When8() {
+        input = "8\n";
+
+        inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);
+
+        Solution.main(defaultInput);
+
+        assertEquals("Weird\n", outContent.toString());
+    }
+
+    @Test
+    void evenAndBetween6and20When6() {
+        input = "6\n";
+
+        inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);
+
+        Solution.main(defaultInput);
+
+        assertEquals("Weird\n", outContent.toString());
+    }
+
+    @Test
+    void evenAndBetween6and20When20() {
+        input = "20\n";
+
+        inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);
+
+        Solution.main(defaultInput);
+
+        assertEquals("Weird\n", outContent.toString());
+    }
+
+    @Test
+    void evenAndGreaterThan20Input() {
         input = "24\n";
 
         inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);
 
-        Solution.main(new String[]{});
+        Solution.main(defaultInput);
 
-        assertEquals("Not Weird", outContent.toString());
+        assertEquals("Not Weird\n", outContent.toString());
     }
 }
