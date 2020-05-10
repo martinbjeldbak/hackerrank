@@ -1,6 +1,8 @@
 package com.martinbjeldbak;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import com.martinbjeldbak.welcometojava.Solution;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -9,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-public class WelcomeToJavaTest {
+public class SolutionTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
 
@@ -23,11 +25,9 @@ public class WelcomeToJavaTest {
         System.setOut(originalOut);
     }
 
-    private final WelcomeToJava instance = new WelcomeToJava();
-
     @Test
     void itPrintsHelloToStdOut() {
-        instance.print();
+        Solution.main(new String[]{});
 
         assertEquals("Hello, World.\nHello, Java.\n", outContent.toString());
     }
