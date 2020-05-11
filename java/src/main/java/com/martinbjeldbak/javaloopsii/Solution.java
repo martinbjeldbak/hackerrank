@@ -14,11 +14,10 @@ class Solution {
             int b = in.nextInt();
             int n = in.nextInt();
 
-            int sum = 0;
             for(int j = 0; j < n; j++) {
-                sum += Math.pow(2, j) * b;
+                a += Math.pow(2, j) * b;
 
-                System.out.printf("%d%s", a + sum, j == n-1 ? "" : " ");
+                System.out.printf("%d%s", a, j == n-1 ? "" : " ");
             }
 
             System.out.println();
