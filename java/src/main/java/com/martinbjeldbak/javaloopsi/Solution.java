@@ -2,6 +2,7 @@ package com.martinbjeldbak.javaloopsi;
 
 import java.util.Scanner;
 
+// https://www.hackerrank.com/challenges/java-loops-i
 public class Solution {
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
