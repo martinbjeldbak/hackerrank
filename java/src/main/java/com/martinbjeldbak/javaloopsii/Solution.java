@@ -18,11 +18,7 @@ class Solution {
             for(int j = 0; j < n; j++) {
                 sum += Math.pow(2, j) * b;
 
-                if(j == n-1) {
-                    System.out.printf("%d", a + sum);
-                } else {
-                    System.out.printf("%d ", a + sum);
-                }
+                System.out.printf("%d%s", a + sum, j == n-1 ? "" : " ");
             }
 
             System.out.println();
