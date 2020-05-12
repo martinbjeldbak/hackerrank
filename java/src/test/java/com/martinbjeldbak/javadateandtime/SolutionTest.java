@@ -5,10 +5,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.io.PrintStream;
+import java.io.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -39,8 +36,13 @@ public class SolutionTest {
         inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);
 
-        Solution.main(defaultInput);
-        assertEquals("WEDNESDAY", outContent.toString());
+        try {
+            Solution.main(defaultInput);
+        }
+        catch(IOException ex) {
+            System.out.println("Failed!");
+        }
+        assertEquals("WEDNESDAY\n", outContent.toString());
     }
 }
 
