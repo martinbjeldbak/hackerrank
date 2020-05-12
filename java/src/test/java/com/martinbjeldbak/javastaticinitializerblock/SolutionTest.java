@@ -55,6 +55,6 @@ public class SolutionTest {
 
         Solution.main(defaultInput);
 
-        assertEquals("java.lang.Exception: Breadth and height must be positive", outContent.toString());
+        assertEquals("java.lang.Exception: Breadth and height must be positive\n", outContent.toString());
     }
 }
