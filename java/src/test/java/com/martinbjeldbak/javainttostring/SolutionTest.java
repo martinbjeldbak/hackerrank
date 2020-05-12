@@ -42,6 +42,18 @@ public class SolutionTest {
 
         Solution.main(defaultInput);
 
-        assertEquals("Good job", outContent.toString());
+        assertEquals("Good job\n", outContent.toString());
+    }
+
+    @Test
+    void testCase2() {
+        input = "-50";
+
+        inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);
+
+        Solution.main(defaultInput);
+
+        assertEquals("Good job\n", outContent.toString());
     }
 }
