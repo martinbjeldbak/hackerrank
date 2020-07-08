@@ -15,6 +15,12 @@ public class FindMissing {
         Set<Integer> partialSetSet = Arrays.stream(partialSet).boxed().collect(Collectors.toSet());
 
         fullSetSet.removeAll(partialSetSet);
-        return fullSetSet.toArray(new Integer[1])[0];
+        Integer[] missing = fullSetSet.toArray(new Integer[1]);
+
+        if(missing[0] == null) {
+            return -1;
+        } else {
+            return missing[0];
+        }
     }
 }
