@@ -28,17 +28,17 @@ public class FindMissing {
     // [4, 9, 12, 6]
     // 5
     public int callArrayImplementation(int[] fullSet, int[] partialSet) {
-        for(int i = 0; i < fullSet.length; i++) {
-            if(!containsElement(partialSet, fullSet[i])) {
-                return fullSet[i];
+        for (int value : fullSet) {
+            if (!containsElement(partialSet, value)) {
+                return value;
             }
         }
         return -1;
     }
 
     public boolean containsElement(int[] array, int element) {
-        for(int i = 0; i < array.length; i++) {
-            if(array[i] == element) {
+        for (int value : array) {
+            if (value == element) {
                 return true;
             }
         }
