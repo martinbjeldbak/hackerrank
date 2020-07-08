@@ -11,4 +11,11 @@ public class FindMissingTest {
 
         assertEquals(5, subject.call(new int[] {4, 12, 9, 5, 6 }, new int[] {4, 9, 12, 6}));
     }
+
+    @Test
+    void testWithoutMatch() {
+        FindMissing subject = new FindMissing();
+
+        assertEquals(-1, subject.call(new int[] {4, 12, 9, 6 }, new int[] {4, 9, 12, 6}));
+    }
 }
