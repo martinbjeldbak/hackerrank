@@ -33,7 +33,7 @@ public class SolutionTest {
 
     @Test
     void testCase1() {
-        input = "3\n1,01\nHello, Java.";
+        input = "3\n1.01\nHello, Java.\n";
 
         inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);

@@ -44,17 +44,4 @@ public class SolutionTest {
 
         assertEquals("3", outContent.toString());
     }
-
-    @Test
-    void testCase2() {
-        input = "-1\n" +
-                "2\n";
-
-        inContent = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inContent);
-
-        Solution.main(defaultInput);
-
-        assertEquals("java.lang.Exception: Breadth and height must be positive\n", outContent.toString());
-    }
 }
