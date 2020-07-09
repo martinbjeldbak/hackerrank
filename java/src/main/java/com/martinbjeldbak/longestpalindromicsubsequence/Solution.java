@@ -13,19 +13,30 @@ import java.util.regex.*;
 // https://www.hackerrank.com/challenges/longest-palindromic-subsequence/problem
 public class Solution {
 
-    static LongestPalindromicSubSequence lps = new LongestPalindromicSubSequence();
+    // NOTE: lps function copied from LongestPalindromicSubSequence object for easier pasting into Hackerrank
+    static int lps(String x) {
+        if(x.length() == 0)
+            return 0;
+        if(x.length() == 1)
+            return 1;
 
-    // Complete the longestPalindromicSubsequence function below.
+        if(x.charAt(0) == x.charAt(x.length() - 1)) {
+            return 2 + lps(x.substring(1, x.length() - 1));
+        }
+        else {
+            return Math.max(lps(x.substring(0, x.length()-1)),
+                    lps(x.substring(1, x.length())));
+        }
+    }
+
     static int longestPalindromicSubsequence(String s, int k) {
-        //System.out.println("Evaluating " + s);
-
         int numberOfWays = 0;
-        int sLongestPalindromicSubsequence = lps.call(s);
+        int targetPalindromeSubsequenceLength = lps(s) + k;
 
         for(char letter = 'a'; letter <= 'z'; letter++) {
             for(int i = 0; i < s.length() + 1; i++) {
                 String sWithLetter = s.substring(0, i) + letter + s.substring(i);
-                if(lps.call(sWithLetter) >= (sLongestPalindromicSubsequence + k)) {
+                if(lps(sWithLetter) >= targetPalindromeSubsequenceLength) {
                     numberOfWays++;
                 }
             }

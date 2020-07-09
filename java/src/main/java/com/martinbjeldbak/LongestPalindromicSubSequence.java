@@ -18,11 +18,5 @@ public class LongestPalindromicSubSequence {
             return Math.max(call(x.substring(0, x.length()-1)),
                             call(x.substring(1, x.length())));
         }
-
-
-
-
-        //return -1;
-
     }
 }
